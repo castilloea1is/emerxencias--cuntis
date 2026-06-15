@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atestado Emerxencias Cuntis</title>
+<style>
+body{font-family:Arial,sans-serif;background:#FFF9C4;margin:20px}
+.cabecera{text-align:center;background:#fff8d6;border:2px solid #D4AF37;border-radius:12px;padding:15px;margin-bottom:15px}
+.logo{max-width:220px}
+fieldset{background:#fff;border:1px solid #999;border-radius:8px;padding:10px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ccc;padding:6px}
+input[type=text],input[type=number],input[type=date],input[type=time],textarea,select{width:100%;box-sizing:border-box;padding:6px}
+.total{font-size:22px;color:#c00;font-weight:bold}
+#firma{border:2px solid #000;background:#fff;touch-action:none}
+button{padding:10px 20px;margin:5px}
+</style>
+</head>
+<body>
+
+<div class="cabecera">
+<img src="logo.png" class="logo" alt="Escudo">
+<h1 id="numAtestado"></h1>
+<h2>EMERXENCIAS CUNTIS</h2>
+<h3>Servizo Municipal de Emerxencias e Protección Civil</h3>
+<p><b>Campo de Fútbol da Ran, s/n</b></p>
+</div>
+
+<fieldset><legend>Condutor 1</legend>
+Nome e apelidos:<input type="text">
+DNI:<input type="text">
+Dirección e teléfono:<input type="text">
+</fieldset>
+
+<fieldset><legend>Condutor 2</legend>
+Nome e apelidos:<input type="text">
+DNI:<input type="text">
+Dirección e teléfono:<input type="text">
+</fieldset>
+
+<fieldset><legend>Localización da intervención</legend>
+Concello:<input type="text" value="Cuntis">
+Parroquia:<input type="text">
+Lugar:<input type="text">
+Estrada:<input type="text">
+Punto quilométrico:<input type="text">
+Coordenadas GPS:<input type="text">
+</fieldset>
+
+<fieldset><legend>Vehículos implicados</legend>
+<table>
+<tr><th>Matrícula</th><th>Seguro</th><th>Marca</th><th>Modelo</th></tr>
+<tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+<tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+<tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+<tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+</table>
+</fieldset>
+
+<fieldset><legend>Datos do accidente</legend>
+Data:<input type="date">
+Hora:<input type="time">
+<h4>Estado da calzada</h4>
+<label><input type="checkbox"> Seca</label>
+<label><input type="checkbox"> Chuviosa</label>
+<label><input type="checkbox"> Neve</label>
+<label><input type="checkbox"> Xeo</label>
+<label><input type="checkbox"> Ben Pintada</label>
+<label><input type="checkbox"> Mal Pintada</label>
+<label><input type="checkbox"> Gravilla no asfalto</label>
+<label><input type="checkbox"> Aceite ou Hidrocarburos</label>
+
+<h4>Tipo de vía</h4>
+<label><input type="checkbox"> Estrada</label>
+<label><input type="checkbox"> Rúa</label>
+<label><input type="checkbox"> Autovía</label>
+<label><input type="checkbox"> Autoestrada</label>
+<label><input type="checkbox"> Vial Forestal asfaltado</label>
+<label><input type="checkbox"> Vial Forestal sen asfaltar</label>
+<label><input type="checkbox"> Glorieta</label>
+<label><input type="checkbox"> Corredoira</label>
+<label><input type="checkbox"> Pista da Parcelaria</label>
+<label><input type="checkbox"> Outras vías</label>
+
+<h4>Número de feridos</h4>
+<select id="feridos"></select>
+<h4>Estado dos feridos</h4>
+<label><input type="checkbox"> Leves</label>
+<label><input type="checkbox"> Graves</label>
+<label><input type="checkbox"> Moi graves</label>
+<label><input type="checkbox"> Falecidos</label>
+</fieldset>
+
+<fieldset><legend>Outros intervintes</legend>
+<label><input type="checkbox"> Garda Civil Tráfico</label><br>
+<label><input type="checkbox"> 061</label><br>
+<label><input type="checkbox"> Policía Local</label><br>
+<label><input type="checkbox"> Policía Nacional</label><br>
+<label><input type="checkbox"> Mossos d'Esquadra</label><br>
+<label><input type="checkbox"> Ertzaintza</label><br>
+<label><input type="checkbox"> Seprona</label><br>
+<label><input type="checkbox"> Protección Civil Caldas</label><br>
+<label><input type="checkbox"> Protección Civil Moraña</label><br>
+<label><input type="checkbox"> Protección Civil Portas</label><br>
+<label><input type="checkbox"> Alcalde</label><br>
+<label><input type="checkbox"> Forense</label>
+</fieldset>
+
+<fieldset><legend>Materiais utilizados (Totales)</legend>
+<table>
+<tr><th>Material</th><th>Cantidade</th></tr>
+<tr><td>Extintor po</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Sepiolita</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Mangueiras</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Escuma</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Desengraxante</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Conos</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Pás</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Lanternas</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Ballas</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Estrelas de iluminación</td><td><input class="material" type="number" value=""></td></tr>
+<tr><td>Paletas Go/Stop</td><td><input class="material" type="number" value=""></td></tr>
+</table>
+</fieldset>
+
+<fieldset><legend>Persoal Intervinte e Vehículos utilizados</legend>
+<table>
+<tr><th>Concepto</th><th>Usado</th><th>Importe (€)</th></tr>
+<tr><td>PEON</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>OFICIAL</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>CONDUTOR</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>TECNICO EN EMERXENCIAS</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>BUP</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>BUL</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>Pickup</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>Todoterreo</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>Camión</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>Retroexcavadora</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+<tr><td>Tractor</td><td><input class="veh" type="checkbox"></td><td><input class="precio" type="number" value=""></td></tr>
+</table>
+<h3 class="total">Total: <span id="total">0.00</span> €</h3>
+</fieldset>
+
+<fieldset><legend>Danos materiais</legend><textarea rows="6"></textarea></fieldset>
+<fieldset><legend>Observacións</legend><textarea rows="10"></textarea></fieldset>
+
+<fieldset><legend>Firma</legend>
+<canvas id="firma" width="700" height="200"></canvas><br>
+<button type="button" onclick="limpiarFirma()">Limpiar firma</button>
+</fieldset>
+
+<button onclick="window.print()">🖨️ Xerar PDF / Imprimir</button>
+<button type="button" onclick="enviarCorreo()">📧 Enviar Atestado</button>
+
+<script>
+for(let i=0;i<=200;i++){feridos.innerHTML += "<option>"+i+"</option>";}
+let serie=localStorage.getItem("serieAtestado")||1;
+numAtestado.innerHTML="ATESTADO-2026-"+String(serie).padStart(6,"0");
+localStorage.setItem("serieAtestado",parseInt(serie)+1);
+
+function calcular(){
+let total=0;
+document.querySelectorAll(".material").forEach(e=>total+=parseFloat(e.value||0));
+let v=document.querySelectorAll(".veh"), p=document.querySelectorAll(".precio");
+for(let i=0;i<v.length;i++){if(v[i].checked) total+=parseFloat(p[i].value||0);}
+document.getElementById("total").innerText=total.toFixed(2);
+}
+document.addEventListener("input",calcular);
+
+const canvas=document.getElementById("firma"), ctx=canvas.getContext("2d");
+let d=false;
+canvas.onmousedown=()=>d=true;
+canvas.onmouseup=()=>{d=false;ctx.beginPath();};
+canvas.onmousemove=e=>{if(!d)return;ctx.lineTo(e.offsetX,e.offsetY);ctx.stroke();ctx.beginPath();ctx.moveTo(e.offsetX,e.offsetY);};
+function limpiarFirma(){ctx.clearRect(0,0,canvas.width,canvas.height);}
+
+function enviarCorreo(){
+const numero=document.getElementById("numAtestado").innerText;
+window.location.href="mailto:avpcportas@hotmail.com?subject="+encodeURIComponent(numero)+"&body="+encodeURIComponent("Adjuntar PDF do atestado.");
+}
+</script>
+</body></html>
